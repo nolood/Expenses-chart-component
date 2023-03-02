@@ -15,7 +15,7 @@ const Content = ({day, amount, percent}) => {
   return (
     <div className='content__wrapper'>
       <div className={active ? 'upperblock active' : 'upperblock'}>
-        <span>${amount}</span>
+        <span className='amount'>${amount}</span>
       </div>
       <div onClick={() => handleClick()} className='content__bar' style={{minHeight: `${percent}%`}}>
         <div className={percent === 100 ? 'content__bar-progress active' : 'content__bar-progress'}></div>
