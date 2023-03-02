@@ -1,0 +1,256 @@
+@import url('./reset.scss');
+
+$fontSize: 18px;
+
+.section { 
+  background-color: hsl(27, 66%, 92%);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+}
+
+
+.balancebar {
+  width: 40%;
+  background-color: hsl(10, 79%, 65%);
+  padding: 20px 50px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  .balancebar__balance-title {
+    font-weight: 400;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .balancebar__balance {
+    font-weight: 700;
+    font-size: 30px;
+  }
+}
+
+.balancebar__left {
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+.diagram {
+  margin-top: 40px;
+  background-color: white;
+  border-radius: 20px;
+  padding: 30px;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  .diagram__title {
+    color: hsl(25, 47%, 15%);
+    font-size: 38px;
+    font-weight: 700;
+  }
+}
+
+.diagram__down {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 0;
+  align-items: flex-end;
+  .diagram__down-left {
+    display: flex;
+    flex-direction: column;
+  }
+  .diagram__down-right {
+    display: flex;
+    flex-direction: column;
+    text-align: end;  
+    .diagram__percent-title {
+      font-weight: 700;
+      font-size: $fontSize;
+      color: hsl(25, 47%, 15%);
+    }
+    
+  }
+}
+
+.diagram__total-title {
+  font-size: $fontSize;
+  font-weight: 400;
+  color: hsl(28, 10%, 53%);
+  line-height: 20px;
+}
+.diagram__total-money {
+  font-size: 38px;
+  font-weight: 700;
+  color: hsl(25, 47%, 15%);
+  margin-top: 2px;
+}
+
+.diagram__lastmonth {
+  font-weight: 400;
+  font-size: $fontSize;
+  color: hsl(28, 10%, 53%);
+}
+
+.content {
+  border-bottom: 1px solid hsl(28, 10%, 53%);
+  height: 350px;
+  padding-bottom: 30px;
+  align-items: flex-end;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 50px;
+  margin-top: 50px;
+}
+
+.content__bar-day {
+  color: hsl(28, 10%, 53%);
+  margin-top: 10px;
+  font-size: $fontSize;
+  font-weight: 700;
+}
+
+.content__bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content__bar-progress {
+  background-color: hsl(10, 79%, 65%);
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  transition: 0.2s;
+  &:hover {
+    background-color: hsl(10, 60%, 72%);
+  }
+}
+
+.content__bar-progress.active {
+  background-color: hsl(186, 34%, 60%);
+  transition: 0.2s;
+  &:hover {
+    background-color: hsl(185, 29%, 73%);
+  }
+}
+
+.content__wrapper {
+  height: 100%;
+  width: 10%;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  min-width: 42px;
+}
+
+.upperblock.active {
+  text-align: center;
+  background-color: hsl(25, 47%, 15%);
+  border-radius: 5px;
+  padding: 8px 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  transition: 0.2s;
+  opacity: 1;
+  span {
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+  }
+}
+
+.upperblock{
+  transition: 0.2s;
+  opacity: 0;
+}
+
+@media (max-width: 1350px) {
+  .balancebar {
+    width: 70%;
+  }
+  .diagram {
+    width: 70%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .balancebar {
+    width: 90%;
+  }
+  .diagram {
+    width: 90%;
+  }
+}
+
+@media (max-width: 750px) {
+  .upperblock.active {
+    span {
+      font-size: 12px;
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .diagram {
+    .diagram__title {
+      font-size: 30px;
+    }
+  }
+}
+
+
+@media (max-width: 450px) {
+  .diagram {
+    .diagram__title {
+      font-size: 26px;
+    }
+  }
+  
+  .content__wrapper {
+    min-width: 30px;
+  }
+
+  .upperblock.active {
+    span {
+      font-size: 10px;
+    }
+  }
+}
+
+
+@media (max-width: 384px) {
+
+  
+  .diagram__lastmonth {
+    font-size: 14px;
+  }
+    
+  .diagram__total-money {
+    font-size: 30px;
+  }
+
+  .upperblock.active {
+    span {
+      font-size: 8px;
+    }
+  }
+
+  .diagram {
+    .diagram__title {
+      font-size: 20px;
+    }
+  }
+  .diagram__total-title {
+    font-size: 16px;
+  }
+
+  .content__wrapper {
+    min-width: 25px;
+  }
+  .content__bar-day {
+    font-size: 14px;
+  }
+} 
